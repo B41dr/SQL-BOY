@@ -136,3 +136,38 @@ exit
 ###  基础语句
 ###  小结
 ###  习题
+```mysql
+show databases; -- 显示所有的数据库
+
+use sys; -- 使用sys这个数据库
+
+show tables; -- 展示sys这个数据库所有的表
+
+select * from host_summary; -- 查询host_summary这张表的所有字段
+
+select * from host_summary where host = 'localhost'; -- 查询host_summary这张表host='localhost'的所有数据
+
+show tables like '%host_summary'; -- 输出什么？
+
+show tables like 'host_summary%'; -- 输出什么？
+
+show tables like '%host_summary%'; -- 输出什么？
+
+-- 得出什么？
+
+
+-- 在host_summary中查找host为localhost且total_memory_allocated为76.91 MiB的数据的statements
+select statements from host_summary where host = 'localhost' and total_memory_allocated = '76.91 MiB';
+
+-- 题目
+-- 创建一个名为test1数据库，一个名为test2数据库。
+
+-- 删除名为test2数据库。
+
+-- 在test1数据库创建一个名为test1_table的表，这张表有两个字段：name、id；name的数据类型是varchar 、id的数据类型是int
+-- 示例如下
+-- create table test_table(
+--   stu_id VARCHAR,
+--   age INT,
+--   );
+```
