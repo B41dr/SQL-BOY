@@ -33,15 +33,15 @@ https://dockerdocs.cn/docker-for-mac/install/#google_vignette
 
 ![alt text](image-1.png)
 
-###  拉取Mysql镜像
+###  拉取 Mysql 镜像
 
-打开docker，搜索并拉取Mysql镜像：
+打开docker，搜索并拉取 Mysql 镜像：
 
 ![alt text](image-2.png)
 
 ![alt text](image-3.png)
 
-拉取完成后，使用Command + Space打开搜索，输入`Terminal`打开终端，输入下面的指令查看Mysql镜像是否被成功拉取：
+拉取完成后，使用Command + Space打开搜索，输入`Terminal`打开终端，输入下面的指令查看 Mysql 镜像是否被成功拉取：
 
 ```bash
 docker images -a
@@ -55,19 +55,9 @@ docker images -a
 
 ###  进入Mysql
 
-点击`run`，就可以在docker中运行Mysql：
+**我们先使用指令创建 Mysql 实例：**
 
-![alt text](image-4.png)
-
-如果显示以下信息，则表示docker启动了Mysql：
-
-![alt text](image-5.png)
-
-**或者，我们可以使用指令创建Mysql实例：**
-
-> 如果你已经使用点击创建了实例，请忽略这一步
-
-执行下面的指令创建一个Mysql示例，并且为这个示例设置账号密码：
+执行下面的指令创建一个 Mysql 示例，并且为这个示例设置账号密码：
 
 ```bash
 docker run -itd --name mysql-test -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 mysql
@@ -83,8 +73,9 @@ docker run -itd --name mysql-test -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 mys
 
 `-d mysql` 表示为`mysql`开启一个`守护进程`
 
+![alt text](image-8.png)
 
-成功启动Mysql服务后，我们可以使用以下指令查询当前运行中的容器：
+成功启动 Mysql 服务后，会生成一个哈希值，然后我们可以使用以下指令查询当前运行中的容器：
 
 ```bash
 docker ps
@@ -101,6 +92,39 @@ docker ps -a
 
 ![alt text](image-7.png)
 
+接下来，我们通过下面命令执行该实例：
+
+```bash
+docker exec -it mysql-test bash -l
+```
+
+![alt text](image-9.png)
+
+执行成功后，登陆 Mysql 的`root`用户：
+
+```bash
+mysql -uroot -p
+```
+
+能出现上述图片，证明 Mysql 启动成功！
+
+![alt text](image-10.png)
+
+你可以使用下面的指令退出 Mysql ：
+
+```bash
+exit
+```
+
+然后使用下面的指令退出 docker 实例：
+
+![alt text](image-11.png)
+
+```bash
+exit
+```
+
+![alt text](image-12.png)
 ###  库表介绍
 ###  基础语句
 ###  小结
