@@ -10,7 +10,6 @@
 
 总之，学习`SQL`对于你来讲是绝对正确的事情，你能获得专业的技巧、逻辑能力的提升、还能共鸣前人在做这些事情时候激动的心情、最重要的，你能离理想中的自己更近一步！
 
-###  docker简介
 ###  MacOS安装docker
 首先，我们需要安装Homebrew。使用Command + Space打开搜索，输入`Terminal`打开终端，然后，输入如下指令进行安装：
 
@@ -64,7 +63,7 @@ docker images -a
 
 **我们先使用指令创建 Mysql 实例：**
 
-执行下面的指令创建一个 Mysql 示例，并且为这个示例设置账号密码：
+执行下面的指令创建一个 Mysql 实例，并且为这个实例设置账号密码：
 
 ```bash
 docker run -itd --name mysql-test -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 mysql
@@ -82,24 +81,17 @@ docker run -itd --name mysql-test -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 mys
 
 ![alt text](image-8.png)
 
-成功启动 Mysql 服务后，会生成一个哈希值，然后我们可以使用以下指令查询当前运行中的容器：
+成功启动 Mysql 服务后，会生成一个哈希值，这个哈希值是容器的唯一凭证。
+
+然后我们可以使用以下指令查询 Mysql 实例是否运行成功：
 
 ```bash
 docker ps
-
-or
-
-docker ps -a
 ```
-**上述命令中：**
-
-`docker ps` 表示展示当前运行中的容器
-
-`docker ps -a` 表示展示所有容器
 
 ![alt text](image-7.png)
 
-接下来，我们通过下面命令执行 Mysql 实例，并输入密码：
+如果 Mysql 运行成功，我们通过下面命令执行 Mysql 实例，并输入密码：
 
 ```bash
 docker exec -it mysql-container mysql -uroot -p
