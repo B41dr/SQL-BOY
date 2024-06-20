@@ -99,23 +99,13 @@ docker ps -a
 
 ![alt text](image-7.png)
 
-接下来，我们通过下面命令执行该实例：
+接下来，我们通过下面命令执行 Mysql 实例，并输入密码：
 
 ```bash
-docker exec -it mysql-test bash -l
+docker exec -it mysql-container mysql -uroot -p
 ```
 
-![alt text](image-9.png)
-
-执行成功后，登陆 Mysql 的`root`用户：
-
-```bash
-mysql -uroot -p
-```
-
-能出现上述图片，证明 Mysql 启动成功！
-
-![alt text](image-10.png)
+![alt text](image-13.png)
 
 你可以使用下面的指令退出 Mysql ：
 
