@@ -114,9 +114,6 @@ exit
 ```
 
 ![alt text](image-12.png)
-###  库表介绍
-###  基础语句
-###  小结
 ###  习题
 ```mysql
 show databases; -- 显示所有的数据库
