@@ -1,5 +1,5 @@
 ## tutorial 2
-### 拥有自己的数据库
+### 不及格的Ming
 上一节我们学会了使用 docker 安装 Mysql，并且学会了一些 Mysql 的基础指令。接下来，我们将创建一个新的数据库，并且在新的数据库中创建几张表，最后进行数据的增删查改。
 
 初始化 Mysql 后，会生成一些基础数据库，这些数据库记录了 Mysql 的使用记录、Mysql 的性能表现、用户信息等信息。
@@ -96,3 +96,23 @@ select * from students;
 ![alt text](image-5.png)
 
 现在`Ming`不及格的事情被大家知道了！
+
+`Ming`想删除这个表，但由于刚喝完酒打错了命令：
+
+```sql
+DROP TABLE snoopy;
+```
+
+![alt text](image-6.png)
+
+`Ming`发现没删掉，于是想删掉这个数据库：
+
+```sql
+DROP DATABASE test_2;
+```
+
+![alt text](image-7.png)
+
+好吧，库也删不掉，`Ming`实在太晕了，于是直接躺床上睡觉了。第二天`Ming`醒来，发现全校都知道他不及格了。
+
+### 删除记忆
