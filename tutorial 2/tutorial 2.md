@@ -6,7 +6,7 @@
 
 ![alt text](image.png)
 
-接下来，我们创建一个名为`test_1`的数据库。
+接下来，我们创建一个名为`test_1`的数据库：
 
 ```sql
 create database test_1;
@@ -14,4 +14,26 @@ create database test_1;
 
 ![alt text](image-1.png)
 
-我们发现，Database 在最下面新增了一行`test_1`，这表示我们创建数据库成功。
+我们发现，Database 在最下面新增了一行`test_1`，这表示我们创建数据库成功。接下来，我们可以试着在`test_1`中新建一张名为`students`的表，不过在此之前，我们有必要了解 Mysql 表中的[数据类型](https://www.runoob.com/mysql/mysql-data-types.html)：
+
+```sql
+-- 可以先使用数据库再建表
+use test_1;
+
+CREATE TABLE students(
+    s_id INT, -- 学生的ID
+    s_name VARCHAR(50), -- 学生的姓名
+    s_sex ENUM('male', 'female') -- 学生的性别
+);
+
+-- 也可以直接新建表
+CREATE TABLE test_1.students(
+    s_id INT, -- 学生的ID
+    s_name VARCHAR(50), -- 学生的姓名
+    s_sex ENUM('male', 'female') -- 学生的性别
+);
+```
+
+![alt text](image-2.png)
+
+现在，我们成功创建了`students`表。
