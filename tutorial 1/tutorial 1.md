@@ -94,7 +94,7 @@ docker ps
 如果 Mysql 运行成功，我们通过下面命令执行 Mysql 实例，并输入密码：
 
 ```bash
-docker exec -it mysql-container mysql -uroot -p
+docker exec -it mysql-test mysql -uroot -p
 ```
 
 ![alt text](image-13.png)
